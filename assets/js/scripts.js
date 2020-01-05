@@ -14,8 +14,8 @@ var titleFieldRestiko =[
 ]
 
 getAllRestiko();
-
-setTimeout(function() {
-     setListRestiko();
-     createPagination();
-}, 2000); 
+setTimeout(function() { 
+    $("#loading").hide();
+    setListRestiko();
+    createPagination();
+}, 5000); 

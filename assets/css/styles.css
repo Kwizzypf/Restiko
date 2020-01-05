@@ -1,9 +1,24 @@
+
+#formulaire, #titleMid, #titleTop
+{
+    display: none;
+}
+
+.cursor
+{
+    cursor: pointer;
+}
+
 .underline:hover
 {
     text-decoration: underline;
     cursor: pointer;
 }
 
+.w-40
+{
+    width: 40%;
+}
 
 .simple-pagination ul {
 	margin: 0 0 20px;
