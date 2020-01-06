@@ -11,10 +11,14 @@ var titleFieldRestiko =[
     "Qu'est-ce que tu ferais à la place du formateur ?",
     "Objectif atteint?",
     "Note sur 5"
-]
+];
 
+$("#navBar").show();
 getAllRestiko();
+
 setTimeout(function() { 
+    $("a").removeClass("disabled");
+    $(".mainBar").attr("onclick","afficherMain()");
     $("#loading").hide();
     $("#navBar").show();
     setListRestiko();

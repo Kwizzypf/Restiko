@@ -1,5 +1,6 @@
 function getAllRestiko()
 {
+    tableRestiko.length = 0;
     base('Table 1').select({
         // Selecting the first 3 records in Grid view:
         maxRecords: 50,
