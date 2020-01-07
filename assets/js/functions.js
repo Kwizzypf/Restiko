@@ -41,6 +41,7 @@ function setListRestiko()
     $("#titleTop").show();
     for(var i = 0; i < tableRestiko.length; i ++)
     {
+        
         var tmp = listRestiko.replace(/###number###/gi, i+1);
         tmp = tmp.replace("###date###",tableRestiko[i][0]);
         $("#list").append(tmp);
@@ -84,6 +85,7 @@ function show(index)
     $("#i-9").html(tableRestiko[cpt][9]);
     $("#i-10").html(tableRestiko[cpt][10]);
     $("#btnModif").attr("onclick","modifier("+cpt+")");
+    
 }
 
 function modifier(index)

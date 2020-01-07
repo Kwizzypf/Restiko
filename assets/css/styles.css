@@ -15,6 +15,11 @@ body, .bg-img
     color: white;
 }
 
+.text-black
+{
+	color:black;
+}
+
 
 #formulaire, #titleMid, #titleTop, #navBar
 {
