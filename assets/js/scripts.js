@@ -23,4 +23,4 @@ setTimeout(function() {
     $("#navBar").show();
     setListRestiko();
     createPagination();
-}, 5000); 
+}, 10000); 

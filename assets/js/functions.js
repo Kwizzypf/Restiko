@@ -1,9 +1,9 @@
 function getAllRestiko()
 {
     tableRestiko.length = 0;
-    base('Table 1').select({
+    base('RESTIKO').select({
         // Selecting the first 3 records in Grid view:
-        maxRecords: 50,
+        maxRecords: 100,
         view: "Grid view"
     }).eachPage(function page(records, fetchNextPage) {
         // This function (`page`) will get called for each page of records.
@@ -111,7 +111,7 @@ function modifier(index)
 
 function modifierRestiko(id)
 {
-    base('Table 1').update(id, {
+    base('RESTIKO').update(id, {
         "Date": $("#dateID").val(),
         "Ce que j'ai fait": $("#id-1").val(),
         "Ce que j'ai appris": $("#id-2").val(),
@@ -122,7 +122,12 @@ function modifierRestiko(id)
         "Qu'est-ce qui m'a manqué ?": $("#id-7").val(),
         "Qu'est-ce que tu ferais à la place du formateur ?": $("#id-8").val(),
         "Objectif atteint?": $("#id-9").val(),
-        "Note sur 5": $("#id-10").val()
+        "Note sur 5": $("#id-10").val(),
+        "Personne (Initiales)": {
+            "id": "usriJxrWKukdtQdlg",
+            "email": "faatauira.barry@gmail.com",
+            "name": "FAATAUIRA Heifara"
+          }
       }, function(err, record) {
         if (err) {
           console.error(err);
@@ -185,7 +190,7 @@ function resetForm()
 function createRestiko()
 {
 
-    base('Table 1').create({
+    base('RESTIKO').create({
         "Date": $("#dateID").val(),
         "Ce que j'ai fait": $("#id-1").val(),
         "Ce que j'ai appris": $("#id-2").val(),
@@ -196,7 +201,12 @@ function createRestiko()
         "Qu'est-ce qui m'a manqué ?": $("#id-7").val(),
         "Qu'est-ce que tu ferais à la place du formateur ?": $("#id-8").val(),
         "Objectif atteint?": $("#id-9").val(),
-        "Note sur 5": $("#id-10").val()
+        "Note sur 5": $("#id-10").val(),
+        "Personne (Initiales)": {
+            "id": "usriJxrWKukdtQdlg",
+            "email": "faatauira.barry@gmail.com",
+            "name": "FAATAUIRA Heifara"
+          },
       }, function(err, record) {
         if (err) {
           console.error(err);
