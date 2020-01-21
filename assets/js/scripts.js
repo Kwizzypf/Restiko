@@ -21,7 +21,7 @@ localStorage.removeItem('id');
 
 
 
-if(localStorage.getItem("user") != null)
+if(sessionStorage.getItem("user") != null)
 {
     $("#loading").show();
     $("#connection").hide();

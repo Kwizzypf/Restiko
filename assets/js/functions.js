@@ -124,7 +124,6 @@ function resetForm()
 
 function setLocal(number, id)
 {
-    $("#loading").show();
     console.log(number, id)
     localStorage.setItem("number", number)
     localStorage.setItem("id", id);
@@ -151,8 +150,8 @@ function checkIfGood()
             if(admin == inputAdmind && pwd== inputPwd )
             {
                 $("#loading").show();
-                localStorage.setItem("user", admin);
-                localStorage.setItem("pwd", pwd);
+                sessionStorage.setItem("user", admin);
+                sessionStorage.setItem("pwd", pwd);
 
                 setEverything();
             }
