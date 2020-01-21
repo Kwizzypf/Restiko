@@ -1,7 +1,6 @@
 body, .bg-img
 {
-    background-image: url("../img/test.png");
-    background-repeat: repeat;
+    background-image: url("../img/test.jpg");	
     background-size: 100%;
     color: white;
 }
@@ -21,7 +20,7 @@ body, .bg-img
 }
 
 
-#formulaire, #titleMid, #titleTop, #navBar
+#formulaire, #titleMid, #titleTop, #navBar, #affichage
 {
     display: none;
 }

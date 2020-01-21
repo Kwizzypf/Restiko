@@ -15,6 +15,7 @@ var titleFieldRestiko =[
 
 $("#navBar").show();
 getAllRestiko();
+localStorage.clear();
 
 setTimeout(function() { 
     $("a").removeClass("disabled");
@@ -23,4 +24,4 @@ setTimeout(function() {
     $("#navBar").show();
     setListRestiko();
     createPagination();
-}, 10000); 
+}, 3000); 
