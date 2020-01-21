@@ -27,8 +27,12 @@ function getAllRestiko()
         // This function (`page`) will get called for each page of records.
     
         records.forEach(function(record) {
+            var date = record.get("Date");
+            date = date.split('-');
+            date = date.reverse();
+            date = date.join('-');
             var tab = [
-                record.get("Date"),
+                date,
                 record.get("Ce que j'ai fait"),
                 record.get("Ce que j'ai appris"),
                 record.get("Ce que j'ai aimé"),
@@ -56,8 +60,10 @@ function getAllRestiko()
 
 function clearLocal()
 {
+    localStorage.removeItem('number');
+    localStorage.removeItem('id');
     window.location.replace("index.html");
-    localStorage.clear();
+
 }
 
 function setLocal(id, number)

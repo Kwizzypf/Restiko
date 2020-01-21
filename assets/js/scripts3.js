@@ -1,5 +1,6 @@
 var tableRestiko = [];
 getAllRestiko();
+$("#loading").show();
 
 setTimeout(function() { 
     $("a").removeClass("disabled");
@@ -12,3 +13,4 @@ setTimeout(function() {
     show(number);
     $("#btnModif").attr("onclick", "setLocal('"+id+"','"+number+"')");
 }, 3000); 
+

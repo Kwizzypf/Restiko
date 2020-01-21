@@ -124,6 +124,8 @@ function createRestiko()
 
 function clearLocal()
 {
+    localStorage.removeItem('number');
+    localStorage.removeItem('id');
     window.location.replace("index.html");
-    localStorage.clear();
+  
 }

@@ -4,6 +4,9 @@ var bool = false;
 var id = localStorage.getItem("id");
 var index = localStorage.getItem("number");
 
+
+$("#loading").show();
+
 if(id != null)
 {
     bool = true;
@@ -20,3 +23,4 @@ setTimeout(function() {
         modifier(index);
     }
 }, 3000); 
+

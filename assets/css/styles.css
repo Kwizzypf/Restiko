@@ -20,7 +20,7 @@ body, .bg-img
 }
 
 
-#formulaire, #titleMid, #titleTop, #navBar, #affichage
+#formulaire, #titleMid, #titleTop, #navBar, #affichage, #loading
 {
     display: none;
 }

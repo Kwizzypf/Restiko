@@ -13,15 +13,26 @@ var titleFieldRestiko =[
     "Note sur 5"
 ];
 
-$("#navBar").show();
+// $("#navBar").show();
 getAllRestiko();
-localStorage.clear();
+  
+localStorage.removeItem('number');
+localStorage.removeItem('id');
 
-setTimeout(function() { 
-    $("a").removeClass("disabled");
-    $(".mainBar").attr("onclick","afficherMain()");
-    $("#loading").hide();
-    $("#navBar").show();
-    setListRestiko();
-    createPagination();
-}, 3000); 
+
+
+if(localStorage.getItem("user") != null)
+{
+    $("#loading").show();
+    $("#connection").hide();
+    setEverything();
+}
+
+// setTimeout(function() { 
+//     $("a").removeClass("disabled");
+//     $(".mainBar").attr("onclick","afficherMain()");
+//     $("#loading").hide();
+//     $("#navBar").show();
+//     setListRestiko();
+//     createPagination();
+// }, 3000); 

@@ -9,8 +9,12 @@ function getAllRestiko()
         // This function (`page`) will get called for each page of records.
     
         records.forEach(function(record) {
+            var date = record.get("Date");
+            date = date.split('-');
+            date = date.reverse();
+            date = date.join('-');
             var tab = [
-                record.get("Date"),
+                date,
                 record.get("Ce que j'ai fait"),
                 record.get("Ce que j'ai appris"),
                 record.get("Ce que j'ai aimé"),
@@ -120,7 +124,66 @@ function resetForm()
 
 function setLocal(number, id)
 {
+    $("#loading").show();
     console.log(number, id)
     localStorage.setItem("number", number)
     localStorage.setItem("id", id);
+}
+
+function checkIfGood()
+{
+    $("#connection").hide();
+    var Airtable = require('airtable');
+    var base = new Airtable({apiKey: 'keyKFGV7w853FKD35'}).base('appCmEPx5URcrGLJ2');
+
+    base('USERS').select({
+        // Selecting the first 3 records in Grid view:
+        maxRecords: 3,
+        view: "Grid view"
+    }).eachPage(function page(records, fetchNextPage) {
+        // This function (`page`) will get called for each page of records.
+
+        records.forEach(function(record) {
+            var admin = record.get("user");
+            var pwd = record.get("password");
+            var inputAdmind = $("#userId").val();
+            var inputPwd = $("#passId").val();
+            if(admin == inputAdmind && pwd== inputPwd )
+            {
+                $("#loading").show();
+                localStorage.setItem("user", admin);
+                localStorage.setItem("pwd", pwd);
+
+                setEverything();
+            }
+        });
+
+        // To fetch the next page of records, call `fetchNextPage`.
+        // If there are more records, `page` will get called again.
+        // If there are no more records, `done` will get called.
+        fetchNextPage();
+
+    }, function done(err) {
+        if (err) { console.error(err); return; }
+    });
+
+
+}
+
+function setEverything()
+{
+    setTimeout(function() { 
+             $("a").removeClass("disabled");
+             $(".mainBar").attr("onclick","afficherMain()");
+             $("#loading").hide();
+             $("#navBar").show();
+             setListRestiko();
+             createPagination();
+         }, 3000); 
+}
+
+function clearAll()
+{
+    localStorage.clear();
+    Location.reload()
 }
