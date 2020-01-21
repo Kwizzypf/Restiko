@@ -1,3 +1,4 @@
+// fonction qui va récupérer tout les données de mes restiko et les stocks dans un tableau
 function getAllRestiko()
 {
     tableRestiko.length = 0;
@@ -9,20 +10,27 @@ function getAllRestiko()
         // This function (`page`) will get called for each page of records.
     
         records.forEach(function(record) {
+            // inversion de la date pour avoir un affichage JJ-MM-AAAA
+            var date = record.get("Date");
+            date = date.split('-');
+            date = date.reverse();
+            date = date.join('-');
+            // je stock dans un tableau chaque champs de la table airtable
             var tab = [
-                record.get("Date"),
-                record.get("Ce que j'ai fait"),
-                record.get("Ce que j'ai appris"),
-                record.get("Ce que j'ai aimé"),
-                record.get("Ce que j'ai utilisé de nouveaux"),
-                record.get("Problématiques  rencontrées"),
-                record.get("Quels sont les objectifs ?"),
-                record.get("Qu'est-ce qui m'a manqué ?"),
-                record.get("Qu'est-ce que tu ferais à la place du formateur ?"),
-                record.get("Objectif atteint?"),
-                record.get("Note sur 5"),
-                record.id
+                date, // index : [0][0]
+                record.get("Ce que j'ai fait"), // index : [0][1]
+                record.get("Ce que j'ai appris"),// index : [0][2]
+                record.get("Ce que j'ai aimé"),// index : [0][3]
+                record.get("Ce que j'ai utilisé de nouveaux"),// index : [0][4]
+                record.get("Problématiques  rencontrées"),// index : [0][5]
+                record.get("Quels sont les objectifs ?"),// index : [0][6]
+                record.get("Qu'est-ce qui m'a manqué ?"),// index : [0][7]
+                record.get("Qu'est-ce que tu ferais à la place du formateur ?"),// index : [0][8]
+                record.get("Objectif atteint?"),// index : [0][9]
+                record.get("Note sur 5"),// index : [0][10]
+                record.id // index : [0][11]
             ];
+            // je stock le tableau dans un autre tableau
             tableRestiko.push(tab);
         });
     
@@ -36,6 +44,7 @@ function getAllRestiko()
     });
 }
 
+// fonction qui va injecter dans le html les infos dans notre tableau pour un index donné
 function modifier(index)
 {   
     index = index - 1;
@@ -56,6 +65,7 @@ function modifier(index)
     $("#saved").attr("onclick", "modifierRestiko('"+tableRestiko[index][11]+"')");
 }
 
+//fonction qui va update sur airtable les infos dans chaque champs
 function modifierRestiko(id)
 {
 
@@ -91,6 +101,8 @@ function modifierRestiko(id)
       
 }
 
+
+// fonction qui va créer un restiko dans airtable
 function createRestiko()
 {
     base('RESTIKO').create({
@@ -122,6 +134,7 @@ function createRestiko()
     }, 500); 
 }
 
+// fonction qui va clear les infos dans le locale storage et renvoie sur la page index.html
 function clearLocal()
 {
     localStorage.removeItem('number');

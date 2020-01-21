@@ -1,4 +1,8 @@
-var tableRestiko = [];
+//      _____  ____   ____   _____   ___  ______    _____  ____   ____      ___  __    ____   ___               ___   _  _   
+//     |_____ |      |____)    |    |___)   |       |__   |    | |____)      |   | \ | |   ) |_    \ /     |__|  |   | \/ | |
+//     _____| |____  |   \   __|__  |       |       |     |____| |   \      _|__ |  \| |_ /  |___  / \  [] |  |  |   |    | |___
+
+var tableRestiko = []; //tableau qui va stocker tout nos restiko dans airtable
 var titleFieldRestiko =[
     "Date",
     "Ce que j'ai fait",
@@ -13,26 +17,18 @@ var titleFieldRestiko =[
     "Note sur 5"
 ];
 
-// $("#navBar").show();
-getAllRestiko();
+getAllRestiko(); // on lance la fonction qui va remplir notre tableau 
   
+// à chaque fois que l'on sera sur la page index, on remove tout ce qu'on a stocké dans le localStorage
 localStorage.removeItem('number');
 localStorage.removeItem('id');
 
 
-
+// test si il y a déja un utilisateur de connecter
 if(sessionStorage.getItem("user") != null)
 {
+    // si oui on affiche normalement la page de notre site
     $("#loading").show();
     $("#connection").hide();
     setEverything();
 }
-
-// setTimeout(function() { 
-//     $("a").removeClass("disabled");
-//     $(".mainBar").attr("onclick","afficherMain()");
-//     $("#loading").hide();
-//     $("#navBar").show();
-//     setListRestiko();
-//     createPagination();
-// }, 3000); 

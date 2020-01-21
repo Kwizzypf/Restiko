@@ -1,188 +1,210 @@
+"
 <!DOCTYPE html>
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
-    <div id="navBar" class="bg-img mb-5">
-        <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand cursor mainBar" href="index.html">Restiko</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon "></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link cursor text-white disabled" onclick="afficherMain()" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link cursor text-white disabled" onclick="afficherForm()">Création</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="https://kwizzypf.github.io/Veille/" target="_blank">Veille</a>
-                </li> 
-            </ul>
-        </div>
+
+  <!-- Barre de menu pour la navigation entre les pages. -->
+  <div id="navBar" class="bg-img mb-5">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <!-- lien qui nous renvoie sur la homepage -->
+      <a class="navbar-brand cursor mainBar" href="index.html">Restiko</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon "></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <!-- lien qui nous renvoie sur la homepage -->                     
+            <a class="nav-link cursor text-white disabled" onclick="afficherMain()" href="index.html">Home <span
+                class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <!-- lien qui nous renvoie sur la page de création -->
+            <a class="nav-link cursor text-white disabled" onclick="afficherForm()" href="create.html">Création</a>
+          </li>
+          <li class="nav-item">
+            <!-- lien qui nous renvoie sur le site de mes veilles --> 
+            <a class="nav-link text-white" href="https://kwizzypf.github.io/Veille/" target="_blank">Veille</a>
+          </li>
+        </ul>
+      </div>
     </nav>
+  </div>
+
+
+  <!-- formulaire pour récupérer nos infos pour créer un Restiko -->
+  <form id="formulaire" class="mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <!-- champs pour l'info date d'un Restiko -->
+            <label for="dateID">Date:</label>
+            <input type="date" class="form-control" id="dateID" placeholder="Example input">
+          </div>
+        </div>
+      </div>
     </div>
-    
-
-    
-      <form id="formulaire" class="mt-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="form-group">
-                <label for="dateID">Date:</label>
-                <input type="date" class="form-control" id="dateID" placeholder="Example input">    
-              </div>
-            </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <!-- champs pour l'info Ce que j'ai fait d'un Restiko -->
+            <label for="id-1">Ce que j'ai fait:</label>
+            <textarea type="textarea" class="form-control" id="id-1" placeholder="Example textarea"></textarea>
           </div>
         </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="form-group">
-                <label for="id-1">Ce que j'ai fait:</label>
-                <textarea type="textarea" class="form-control" id="id-1" placeholder="Example textarea"></textarea>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="form-group">
-                <label for="id-2">Ce que j'ai appris:</label>
-                <textarea type="textarea" class="form-control" id="id-2" placeholder="Example textarea"></textarea>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="form-group">
-                <label for="id-3">Ce que j'ai aimé:</label>
-                <textarea type="textarea" class="form-control" id="id-3" placeholder="Example textarea"></textarea>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="form-group">
-                <label for="id-4">Ce que j'ai utilisé de nouveaux:</label>
-                <textarea type="textarea" class="form-control" id="id-4" placeholder="Example textarea"></textarea>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="form-group">
-                <label for="id-5">Problématiques  rencontrées:</label>
-                <textarea type="textarea" class="form-control" id="id-5" placeholder="Example textarea"></textarea>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="form-group">
-                <label for="id-6">Quels sont les objectifs ?</label>
-                <textarea type="textarea" class="form-control" id="id-6" placeholder="Example textarea"></textarea>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="form-group">
-                <label for="id-7">Qu'est-ce qui m'a manqué ?</label>
-                <textarea type="textarea" class="form-control" id="id-7" placeholder="Example textarea"></textarea>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="form-group">
-                <label for="id-8">Qu'est-ce que tu ferais à la place du formateur ?</label>
-                <textarea type="textarea" class="form-control" id="id-8" placeholder="Example textarea"></textarea>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="form-group">
-                <label for="id-9">Objectif atteint?</label>
-                <textarea type="textarea" class="form-control" id="id-9" placeholder="Example textarea"></textarea>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="form-group">
-                <label for="id-10">Note sur 5</label>
-                <textarea type="textarea" class="form-control" id="id-10" placeholder="Example textarea"></textarea>
-              </div>
-            </div>
-          </div>
-        </div>  
-        <div class="container text-center">
-          <div class="row text-center">
-              <div class="btn col-5 ml-3 cursor bg-danger text-white" onclick="clearLocal()">
-                Annuler
-            </div>
-            <div id="saved" class="btn col-5 ml-4 cursor bg-success text-white" onclick="createRestiko()">
-                  Sauvegarder    
-            </div>
-          </div>
-        </div>
-      </form>
-
-      <div id="loading" class="container text-center">
-        <div class="row">
-            <div class="col-12">
-                <h2>Wait the page is loading!</h2>
-                <img src="assets/img/pacman.gif" alt="lol">
-            </div>
-        </div>
+      </div>
     </div>
-
-    <footer class="mt-2 text-primary">
-        <div class="text-center">
-            © FAATAUIRA Barry
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <!-- champs pour l'info Ce que j'ai appris d'un Restiko -->
+            <label for="id-2">Ce que j'ai appris:</label>
+            <textarea type="textarea" class="form-control" id="id-2" placeholder="Example textarea"></textarea>
+          </div>
         </div>
-    </footer>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <!-- champs pour l'info ce que j'ai aimé d'un Restiko -->
+            <label for="id-3">Ce que j'ai aimé:</label>
+            <textarea type="textarea" class="form-control" id="id-3" placeholder="Example textarea"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <!-- champs pour l'info ce que j'ai utilisé de nouveau d'un Restiko -->
+            <label for="id-4">Ce que j'ai utilisé de nouveaux:</label>
+            <textarea type="textarea" class="form-control" id="id-4" placeholder="Example textarea"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <!-- champs pour l'info problématiques rencontrées d'un Restiko -->
+            <label for="id-5">Problématiques rencontrées:</label>
+            <textarea type="textarea" class="form-control" id="id-5" placeholder="Example textarea"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <!-- champs pour l'info quels sont les objectifs d'un Restiko -->
+            <label for="id-6">Quels sont les objectifs ?</label>
+            <textarea type="textarea" class="form-control" id="id-6" placeholder="Example textarea"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <!-- champs pour l'info quest ce qui m'a manqué d'un Restiko -->
+            <label for="id-7">Qu'est-ce qui m'a manqué ?</label>
+            <textarea type="textarea" class="form-control" id="id-7" placeholder="Example textarea"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <!-- champs pour l'info quest ce que tu ferais à la place du formateur d'un Restiko -->
+            <label for="id-8">Qu'est-ce que tu ferais à la place du formateur ?</label>
+            <textarea type="textarea" class="form-control" id="id-8" placeholder="Example textarea"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <!-- champs pour l'info objectif atteint d'un Restiko -->
+            <label for="id-9">Objectif atteint?</label>
+            <textarea type="textarea" class="form-control" id="id-9" placeholder="Example textarea"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <!-- champs pour l'info note d'un Restiko -->
+            <label for="id-10">Note sur 5</label>
+            <textarea type="textarea" class="form-control" id="id-10" placeholder="Example textarea"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- div qui contient les deux bouttons  -->
+    <div class="container text-center">
+      <div class="row text-center">
+        <div class="btn col-5 ml-3 cursor bg-danger text-white" onclick="clearLocal()">
+          Annuler
+        </div>
+        <div id="saved" class="btn col-5 ml-4 cursor bg-success text-white" onclick="createRestiko()">
+          Sauvegarder
+        </div>
+      </div>
+    </div>
+  </form>
 
-    <script src="assets/js/jquery-3.4.1.min.js"></script>
-    <script src="assets/js/bootstrap.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/airtable.browser.js"></script>
-    <script src="assets/js/config.js"></script>
-    <script src="assets/js/jquery.simplePagination.js"></script>
-    <script src="assets/js/template.js"></script>
-    <script src="assets/js/functions2.js"></script>
-    <script src="assets/js/script2.js" defer></script>
+    <!-- div qui va contenir notre page de chargement -->
+  <div id="loading" class="container text-center">
+    <div class="row">
+      <div class="col-12">
+        <h2>Wait the page is loading!</h2>
+        <img src="assets/img/pacman.gif" alt="lol">
+      </div>
+    </div>
+  </div>
+
+    <!-- footer pour le copyright lol  -->
+  <footer class="mt-2 text-primary">
+    <div class="text-center">
+      © FAATAUIRA Barry
+    </div>
+  </footer>
+
+  <script src="assets/js/jquery-3.4.1.min.js"></script>
+  <script src="assets/js/bootstrap.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/airtable.browser.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/jquery.simplePagination.js"></script>
+  <script src="assets/js/template.js"></script>
+  <script src="assets/js/functions2.js"></script>
+  <script src="assets/js/script2.js" defer></script>
 </body>
 
-</html>
+</html>"
