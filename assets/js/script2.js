@@ -2,6 +2,11 @@
 //     |_____ |      |____)    |    |___)   |       |__   |    | |____)    |     |___) |__    /_\   |   |_      |__|   |   | \/ | |
 //     _____| |____  |   \   __|__  |       |       |     |____| |   \     |____ |   \ |____ /   \  |   |___ [] |  |   |   |    | |____
  
+if(sessionStorage.getItem("user") == null)
+{
+    window.location.replace("index.html")
+}
+
 var tableRestiko = []; // tableau qui va stocker tout nos restiko de airtable
 getAllRestiko();  // on lance la fonction qui va remplir notre tableau 
 var bool = false; // variable qui va nous permettre de savoir si le localstorage est vide ou pas
@@ -10,6 +15,8 @@ var bool = false; // variable qui va nous permettre de savoir si le localstorage
 var id = localStorage.getItem("id");
 var index = localStorage.getItem("number");
 
+
+
 // affiche notre page de chargement
 $("#loading").show();
 
@@ -17,7 +24,8 @@ $("#loading").show();
 if(id != null)
 {
     bool = true;
-}  
+}
+
 
 //après un délais de 3 sec, j'affiches le formulaire
 setTimeout(function() { 

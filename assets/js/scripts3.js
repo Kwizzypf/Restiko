@@ -2,6 +2,10 @@
 //     |_____ |      |____)    |    |___)   |       |__   |    | |____)    |   ) |__     |    /_\    |   |      |__|   |   | \/ | |
 //     _____| |____  |   \   __|__  |       |       |     |____| |   \     |__/  |____   |   /   \ __|__ |___ []|  |   |   |    | |____
 
+if(sessionStorage.getItem("user") == null)
+{
+    window.location.replace("index.html")
+}
 
 
 var tableRestiko = []; // tableau qui va stocker tout nos restiko de airtable

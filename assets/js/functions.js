@@ -12,9 +12,7 @@ function getAllRestiko()
         records.forEach(function(record) {
             // inversion de la date pour avoir un affichage JJ-MM-AAAA
             var date = record.get("Date");
-            date = date.split('-');
-            date = date.reverse();
-            date = date.join('-');
+
             // je stock dans un tableau chaque champs de la table airtable
             var tab = [
                 date, // index : [0][0]
